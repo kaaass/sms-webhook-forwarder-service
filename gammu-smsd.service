@@ -1,0 +1,13 @@
+[Unit]
+Description=Gammu SMS Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/gammu-smsd -c %h/.config/gammu-smsd/gammurc
+Restart=on-failure
+RestartSec=5s
+EnvironmentFile=%h/.config/gammu-smsd/environment
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,53 @@
+[gammu]
+port = $PORT
+connection = at19200
+logfile = $HOME/.log/gammu-smsd/gammu.log
+logformat = textall
+
+[smsd]
+InboxPath = $HOME/.log/gammu-smsd/inbox/
+OutboxPath = $HOME/.log/gammu-smsd/outbox/
+SentSMSPath = $HOME/.log/gammu-smsd/sent/
+ErrorSMSPath = $HOME/.log/gammu-smsd/error/
+InboxFormat = unicode
+OutboxFormat = unicode
+TransmitFormat = auto
+
+service = files
+
+#PIN =
+#NetworkCode =
+#PhoneCode =
+LogFile = $HOME/.log/gammu-smsd/smsd.log
+LogFacility = daemon
+debugLevel = 4
+CommTimeout = 30
+SendTimeout = 30
+MaxRetries = 1
+RetryTimeout = 600
+ReceiveFrequency = 15
+StatusFrequency = 60
+LoopSleep = 1
+MultipartTimeout = 600
+CheckSecurity = 0
+HangupCalls = 1
+CheckBattery = 1
+CheckSignal = 1
+CheckNetwork = 1
+ResetFrequency = 0
+HardResetFrequency = 0
+DeliveryReport = sms
+DeliveryReportDelay = 7200
+#PhoneID = ?
+#SMSC = +614xxyyyzzz
+RunOnReceive = $HOME/.config/gammu-smsd/hook-send-message.sh
+#RunOnFailure = 
+#RunOnSent =
+#RunOnIncomingCall =
+#IncludeNumbersFile = 
+#ExcludeNumbersFile =
+#IncludeSMSCFile
+#ExcludeSMSCFile
+BackendRetries = 10
+Send = True
+Receive = True
