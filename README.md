@@ -24,4 +24,3 @@ systemctl --user enable --now gammu-smsd.service
 ## Credit
 
 https://github.com/realJoshByrnes/docker-gammu-kalkun
->>>>>>> 9531299 (Init)
