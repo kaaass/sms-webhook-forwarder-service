@@ -13,6 +13,23 @@ Systemd unit (user level) for forwarding SMS message to WebHook using gammu-smsd
 systemctl --user enable --now gammu-smsd.service
 ```
 
+## Webhook
+
+When SMS comes, the service will send a JSON payload in following format to the specified WebHook URL.
+
+```json
+{
+  "data": [
+    {
+      "class": "Class of message",
+      "number": "Sender number",
+      "text": "Message text",
+      "reference": "Message Reference. If delivery status received, this variable contains TPMR of original message"
+    }
+  ]
+}
+```
+
 ## Installed files
 
 - `~/.config/gammu-smsd`: Config and scripts
